@@ -1,4 +1,5 @@
 # RetailTree
+
 RetailTree is a Python library designed for efficient management and querying of spatial data utilizing a tree-based data structure. Specifically, RetailTree employs a VP (Vantage Point) tree for optimized spatial data management.
 
 # Key Features
@@ -14,34 +15,45 @@ RetailTree is a Python library designed for efficient management and querying of
 You can install retailTree via pip:
 
 ```
-1) clone the repo
-2) cd retailTree
-3) pip install retailTree-0.0.1-py3-none-any.whl
+pip install retailtree
 ```
 
 # Usage
 
 ```
-from retailTree import retailTree, Annotation
-from retailTree.utils.dist_func import manhattan, euclidean
+from retailtree import RetailTree, Annotation
+from retailtree.utils.dist_func import manhattan, euclidean
 
-obj = RetailTree()
+# Create annotation object
+ann1 = Annotation(id=1, x_min=2, y_min=1, x_max=3, y_max=2)
+    ann2 = Annotation(id=2, x_min=1, y_min=2, x_max=2, y_max=3)
+    ann3 = Annotation(id=3, x_min=2, y_min=2, x_max=3, y_max=3)
+    ann4 = Annotation(id=4, x_min=3, y_min=2, x_max=4, y_max=3)
+    ann5 = Annotation(id=5, x_min=2, y_min=3, x_max=3, y_max=4)
 
-# Adding annotations
-obj.add_annotation(id=1, x_min=1, y_min=1, x_max=1, y_max=1)
-obj.add_annotation(id=2, x_min=2, y_min=2, x_max=2, y_max=2)
+annotations = [ann1, ann2, ann3, ann4, ann5]
 
-# Tree Building
-obj.build_tree(dist_func=manhattan)
+# Create retailtree object
+rt = RetailTree()
+
+# Adding annotations to retailtree
+for ann in annotations:
+  rt.add_annotation(ann)
+
+
+# Build tree
+rt.build_tree(dist_func=euclidean)
 
 # Get neighbors-annotations within radius
-obj.find_neighbors(id=961360402, radius=1)
+print(rt.neighbors(id=3, radius=1))
 
 # Get Top, Bottom, Right, Left annotations
-obj.TBLR(id=961360402, radius=1.4)
+print(rt.TBLR(id=3, radius=1, overlap=0.5))
 
 # Get neighboring annotations within a particular angle range
-obj.get_neighbors_within_angle(
-        id=963804130, radius=1, min_angle=0, max_angle=90)
+print(rt.neighbors_wa(id=3, radius=1, amin=0, amax=180))
+
+# Get annotation properties
+print(rt.get(id=3).get_coords())
 
 ```

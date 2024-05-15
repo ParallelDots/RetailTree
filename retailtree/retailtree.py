@@ -110,15 +110,15 @@ class RetailTree:
         # if min_angle is None:
         return result_lst
 
-    def neighbors_wa(self, id: int, radius=1, mina=None, maxa=None):
+    def neighbors_wa(self, id: int, radius=1, amin=None, amax=None):
         """
         Retrieves neighboring elements within a specified angle range around a given element.
 
         Args:
             id (int): The identifier of the central element.
             radius (float, optional): The radius within which to search for neighbors. Defaults to 1.
-            mina (min_angle) (float, optional): The minimum angle in degree. Defaults to None.
-            maxa (max_angle) (float, optional): The maximum angle in degree. Defaults to None.
+            amin (min_angle) (float, optional): The minimum angle in degree. Defaults to None.
+            amax (max_angle) (float, optional): The maximum angle in degree. Defaults to None.
 
         Returns:
             list: A list of dictionaries containing information about neighboring elements,
@@ -139,7 +139,7 @@ class RetailTree:
             }
 
             self.__fetching_ann_in_range(
-                result_dict, mina, maxa, result_lst)
+                result_dict, amin, amax, result_lst)
 
         return result_lst
 
