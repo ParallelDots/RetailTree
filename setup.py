@@ -7,7 +7,7 @@ def read( fname ):
     
 setup(
     name="retailtree",
-    version="0.0.1",
+    version="1.01",
     long_description=read("description.rst"),
     packages=find_packages(),
     install_requires=[
