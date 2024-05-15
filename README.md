@@ -1,5 +1,4 @@
 # RetailTree
-
 RetailTree is a Python library designed for efficient management and querying of spatial data utilizing a tree-based data structure. Specifically, RetailTree employs a VP (Vantage Point) tree for optimized spatial data management.
 
 # Key Features
