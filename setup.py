@@ -8,7 +8,7 @@ def read( fname ):
 setup(
     name="retailtree",
     version="1.01",
-    long_description=read("description.rst"),
+    long_description=read("Desc.rst"),
     packages=find_packages(),
     install_requires=[
         'numpy',
