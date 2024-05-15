@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="2DTree",
+    name="retailtree",
     version="0.0.1",
     packages=find_packages(),
     install_requires=[
