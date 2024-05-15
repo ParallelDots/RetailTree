@@ -1,0 +1,258 @@
+[
+    {
+        "id":0,
+        "name": "Prod 0",
+        "x_min": 0,
+        "y_min": 0,
+        "x_max": 80,
+        "y_max": 40
+    },
+    {
+        "id":1,
+        "name": "Prod 1",
+        "x_min": 90,
+        "y_min": 0,
+        "x_max": 170,
+        "y_max": 40
+    },
+    {
+        "id":2,
+        "name": "Prod 2",
+        "x_min": 180,
+        "y_min": 0,
+        "x_max": 260,  
+        "y_max": 40
+    },
+    {
+        "id":3,
+        "name": "Prod 3",
+        "x_min": 270,
+        "y_min": 0,
+        "x_max": 350,
+        "y_max": 40
+    },
+    {
+        "id":4,
+        "name": "Prod 4",
+        "x_min": 0,
+        "y_min": 50,
+        "x_max": 80,
+        "y_max": 90
+    },
+    {
+        "id":5,
+        "name": "Prod 5",
+        "x_min": 90,
+        "y_min": 50,
+        "x_max": 170,
+        "y_max": 90
+    },
+    {
+        "id":6,
+        "name": "Prod 6",
+        "x_min": 180,
+        "y_min": 50,
+        "x_max": 260,
+        "y_max": 90
+    },
+    {
+        "id":7,
+        "name": "Prod 7",
+        "x_min": 270,
+        "y_min": 50,
+        "x_max": 350,
+        "y_max": 90
+    },
+    {
+        "id":8,
+        "name": "Prod 8",
+        "x_min": 0,
+        "y_min": 160,
+        "x_max": 80,
+        "y_max": 200
+    },
+    {
+        "id":9,
+        "name": "Prod 9",
+        "x_min": 90,
+        "y_min": 160,
+        "x_max": 170,
+        "y_max": 200
+    },
+    {
+        "id":10,
+        "name": "Prod 10",
+        "x_min": 180,
+        "y_min": 160,
+        "x_max": 260,
+        "y_max": 200
+    },
+    {
+        "id":11,
+        "name": "Prod 11",
+        "x_min": 270,
+        "y_min": 160,
+        "x_max": 350,
+        "y_max": 200
+    },
+    {
+        "id":12,
+        "name": "Prod 12",
+        "x_min": 0,
+        "y_min": 210,
+        "x_max": 80,
+        "y_max": 250
+    },
+    {
+        "id":13,
+        "name": "Prod 13",
+        "x_min": 90,
+        "y_min": 210,
+        "x_max": 170,
+        "y_max": 250
+    },
+    {
+        "id":14,
+        "name": "Prod 14",
+        "x_min": 180,
+        "y_min": 210,
+        "x_max": 260,
+        "y_max": 250
+    },
+    {
+        "id":15,
+        "name": "Prod 15",
+        "x_min": 270,
+        "y_min": 210,
+        "x_max": 350,
+        "y_max": 250
+    },
+    {
+        "id":16,
+        "name": "Prod 16",
+        "x_min": 0,
+        "y_min": 320,
+        "x_max": 80,
+        "y_max": 360
+    },
+    {
+        "id":17,
+        "name": "Prod 17",
+        "x_min": 90,
+        "y_min": 320,
+        "x_max": 170,
+        "y_max": 360
+    },
+    {
+        "id":18,
+        "name": "Prod 18",
+        "x_min": 180,
+        "y_min": 320,
+        "x_max": 260,
+        "y_max": 360
+    },
+    {
+        "id":19,
+        "name": "Prod 19",
+        "x_min": 270,
+        "y_min": 320,
+        "x_max": 350,
+        "y_max": 360
+    },
+    {
+        "id":20,
+        "name": "Prod 20",
+        "x_min": 0,
+        "y_min": 370,
+        "x_max": 80,
+        "y_max": 410
+    },
+    {
+        "id":21,
+        "name": "Prod 21",
+        "x_min": 90,
+        "y_min": 370,
+        "x_max": 170,
+        "y_max": 410
+    },
+    {
+        "id":22,
+        "name": "Prod 22",
+        "x_min": 180,
+        "y_min": 370,
+        "x_max": 260,
+        "y_max": 410
+    },
+    {
+        "id":23,
+        "name": "Prod 23",
+        "x_min": 270,
+        "y_min": 370,
+        "x_max": 350,
+        "y_max": 410
+    },
+    {
+        "id": 24,
+        "name": "Price_Tag 24",
+        "x_min": 115,
+        "y_min": 100,
+        "x_max": 145,
+        "y_max": 120
+    },
+    {
+        "id": 25,
+        "name": "Price_Tag 25",
+        "x_min": 205,
+        "y_min": 100,
+        "x_max": 235,
+        "y_max": 120
+    },
+    {
+        "id": 26,
+        "name": "Price_Tag 26",
+        "x_min": 25,
+        "y_min": 260,
+        "x_max": 55,
+        "y_max": 280
+    },
+    {
+        "id": 27,
+        "name": "Price_Tag 27",
+        "x_min": 205,
+        "y_min": 260,
+        "x_max": 235,
+        "y_max": 280
+    },
+    {
+        "id": 28,
+        "name": "Price_Tag 28",
+        "x_min": 25,
+        "y_min": 420,
+        "x_max": 55,
+        "y_max": 440
+    },
+    {
+        "id": 29,
+        "name": "Price_Tag 29",
+        "x_min": 115,
+        "y_min": 420,
+        "x_max": 145,
+        "y_max": 440
+    },
+    {
+        "id": 30,
+        "name": "Price_Tag 30",
+        "x_min": 205,
+        "y_min": 420,
+        "x_max": 235,
+        "y_max": 440
+    },
+    {
+        "id": 31,
+        "name": "Price_Tag 31",
+        "x_min": 295,
+        "y_min": 420,
+        "x_max": 325,
+        "y_max": 440
+    }
+]
