@@ -1,0 +1,12 @@
+[
+    [{"id": 1, "distance": 90.0, "angle": 0}, {"id": 4, "distance": 50.0, "angle": 90}, {"id": 5, "distance": 102.95630140987001, "angle": 29}],
+    [{"id": 0, "distance": 90.0, "angle": 180}, {"id": 24, "distance": 90.0, "angle": 90}, {"id": 6, "distance": 102.95630140987001, "angle": 29}, {"id": 4, "distance": 102.95630140987001, "angle": 150}, {"id": 5, "distance": 50.0, "angle": 90}, {"id": 2, "distance": 90.0, "angle": 0}],
+    [{"id": 7, "distance": 102.95630140987001, "angle": 29}, {"id": 3, "distance": 90.0, "angle": 0}, {"id": 6, "distance": 50.0, "angle": 90}, {"id": 1, "distance": 90.0, "angle": 180}, {"id": 25, "distance": 90.0, "angle": 90}, {"id": 5, "distance": 102.95630140987001, "angle": 150}],
+    [{"id": 7, "distance": 50.0, "angle": 90}, {"id": 6, "distance": 102.95630140987001, "angle": 150}, {"id": 2, "distance": 90.0, "angle": 180}],
+    [{"id": 0, "distance": 50.0, "angle": 270}, {"id": 24, "distance": 98.48857801796105, "angle": 23}, {"id": 5, "distance": 90.0, "angle": 0}],
+    [{"id": 0, "distance": 102.95630140987001, "angle": 210}, {"id": 24, "distance": 40.0, "angle": 90}, {"id": 6, "distance": 90.0, "angle": 0}, {"id": 1, "distance": 50.0, "angle": 270}, {"id": 25, "distance": 98.48857801796105, "angle": 23}, {"id": 4, "distance": 90.0, "angle": 180}],
+    [{"id": 7, "distance": 90.0, "angle": 0}, {"id": 24, "distance": 98.48857801796105, "angle": 156}, {"id": 25, "distance": 40.0, "angle": 90}, {"id": 5, "distance": 90.0, "angle": 180}, {"id": 1, "distance": 102.95630140987001, "angle": 210}, {"id": 2, "distance": 50.0, "angle": 270}],
+    [{"id": 3, "distance": 50.0, "angle": 270}, {"id": 6, "distance": 90.0, "angle": 180}, {"id": 2, "distance": 102.95630140987001, "angle": 210}, {"id": 25, "distance": 98.48857801796105, "angle": 156}],
+    [{"id": 26, "distance": 90.0, "angle": 90}, {"id": 13, "distance": 102.95630140987001, "angle": 29}, {"id": 12, "distance": 50.0, "angle": 90}, {"id": 9, "distance": 90.0, "angle": 0}],
+    [{"id": 24, "distance": 70.0, "angle": 270}, {"id": 13, "distance": 50.0, "angle": 90}, {"id": 12, "distance": 102.95630140987001, "angle": 150}, {"id": 8, "distance": 90.0, "angle": 180}, {"id": 14, "distance": 102.95630140987001, "angle": 29}, {"id": 10, "distance": 90.0, "angle": 0}]
+]

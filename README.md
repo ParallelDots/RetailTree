@@ -26,10 +26,10 @@ from retailtree.utils.dist_func import manhattan, euclidean
 
 # Create annotation object
 ann1 = Annotation(id=1, x_min=2, y_min=1, x_max=3, y_max=2)
-    ann2 = Annotation(id=2, x_min=1, y_min=2, x_max=2, y_max=3)
-    ann3 = Annotation(id=3, x_min=2, y_min=2, x_max=3, y_max=3)
-    ann4 = Annotation(id=4, x_min=3, y_min=2, x_max=4, y_max=3)
-    ann5 = Annotation(id=5, x_min=2, y_min=3, x_max=3, y_max=4)
+ann2 = Annotation(id=2, x_min=1, y_min=2, x_max=2, y_max=3)
+ann3 = Annotation(id=3, x_min=2, y_min=2, x_max=3, y_max=3)
+ann4 = Annotation(id=4, x_min=3, y_min=2, x_max=4, y_max=3)
+ann5 = Annotation(id=5, x_min=2, y_min=3, x_max=3, y_max=4)
 
 annotations = [ann1, ann2, ann3, ann4, ann5]
 
