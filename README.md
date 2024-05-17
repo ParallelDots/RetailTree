@@ -21,39 +21,42 @@ pip install retailtree
 # Usage
 
 ```
+# Import necessary modules and functions
 from retailtree import RetailTree, Annotation
 from retailtree.utils.dist_func import manhattan, euclidean
+import json
 
-# Create annotation object
-ann1 = Annotation(id=1, x_min=2, y_min=1, x_max=3, y_max=2)
-ann2 = Annotation(id=2, x_min=1, y_min=2, x_max=2, y_max=3)
-ann3 = Annotation(id=3, x_min=2, y_min=2, x_max=3, y_max=3)
-ann4 = Annotation(id=4, x_min=3, y_min=2, x_max=4, y_max=3)
-ann5 = Annotation(id=5, x_min=2, y_min=3, x_max=3, y_max=4)
+# Define the path to the JSON file containing annotations
+file_path = './tests/test_data/test_data.json'
 
-annotations = [ann1, ann2, ann3, ann4, ann5]
+# Open and load the JSON file
+with open(file_path, 'r') as file:
+    annotations = json.load(file)
 
-# Create retailtree object
+# Initialize a RetailTree object
 rt = RetailTree()
 
-# Adding annotations to retailtree
+# Iterate over the loaded annotations and create Annotation objects
 for ann in annotations:
-  rt.add_annotation(ann)
+    # Create an Annotation object with the required properties
+    ann_obj = Annotation(id=ann['id'], x_min=ann['x_min'], y_min=ann['y_min'], x_max=ann['x_max'], y_max=ann['y_max'])
+    # Add the created Annotation object to the RetailTree
+    rt.add_annotation(ann_obj)
 
-
-# Build tree
+# Build the spatial tree structure using the euclidean distance function
 rt.build_tree(dist_func=euclidean)
 
-# Get neighbors-annotations within radius
+# Retrieve and print annotations within a radius of 1 from the annotation with id=3
 print(rt.neighbors(id=3, radius=1))
 
-# Get Top, Bottom, Right, Left annotations
+# Retrieve and print the Top, Bottom, Left, and Right neighboring annotations
+# of the annotation with id=3 within a radius of 1 and a minimum overlap of 0.5
 print(rt.TBLR(id=3, radius=1, overlap=0.5))
 
-# Get neighboring annotations within a particular angle range
+# Retrieve and print neighboring annotations of the annotation with id=3
+# within a radius of 1 and angle range from 0 to 180 degrees
 print(rt.neighbors_wa(id=3, radius=1, amin=0, amax=180))
 
-# Get annotation properties
+# Retrieve and print the coordinates of the annotation with id=3
 print(rt.get(id=3).get_coords())
-
 ```
