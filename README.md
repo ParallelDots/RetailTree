@@ -29,7 +29,7 @@ from retailtree.utils.dist_func import manhattan, euclidean
 import json
 ```
 
-### Method 1: Annotation Creation via File Import
+### Sample Usage 1: Creating Annotations with Annotation Class using a sample JSON file
 
 ```python
 # Define the path to the JSON file containing annotations
@@ -52,7 +52,7 @@ for ann in annotations:
 
 # OR
 
-### Method 2: Manual Annotation Creation
+### Sample Usage 2: Creating Annotations with Annotation Class
 
 ```python
 # Create annotation object
@@ -71,7 +71,7 @@ for ann in annotations:
   rt.add_annotation(ann)
 ```
 
-## Operations
+## Building the Tree and Querying
 
 ### Retail Tree Operation
 
