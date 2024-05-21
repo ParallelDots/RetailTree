@@ -73,12 +73,14 @@ for ann in annotations:
 
 ## Building the Tree and Querying
 
-### Retail Tree Operation
+### Build Tree
 
 ```python
 # Build the retail tree structure using the euclidean distance function
 rt.build_tree(dist_func=euclidean)
-
+```
+### Querying the Tree
+```python
 # Retrieve and print annotations within a radius.
 print(rt.neighbors(id=3, radius=1))
 
