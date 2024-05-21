@@ -73,7 +73,7 @@ for ann in annotations:
 
 ## Building the Tree and Querying
 
-### Build Tree
+### Building the Tree
 
 ```python
 # Build the retail tree structure using the euclidean distance function
