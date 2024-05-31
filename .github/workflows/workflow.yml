@@ -1,6 +1,9 @@
 name: Publish RetailTree Python package distribution to PyPI
 
 on:
+  push:
+    branches:
+      - main
   workflow_run:
     workflows: ["Run Tests"]
     types:
