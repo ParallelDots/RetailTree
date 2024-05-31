@@ -57,17 +57,13 @@ class RetailTree:
     def __get_neighbors_radius(self):
         """
         Method to get the radius within which neighbors will be searched for.
-        If number of annotations is greater than 10, random annotations are considered.
-
         Radius is the max of the diagonals of the annotations considered.
         """
         radius = self.__neighbors_radius
         if not radius:
             annotation_bucket = list(self.annotations.values())
-            if len(annotation_bucket) > 10:
-                random_annotations = sample(annotation_bucket, 10)
-            else:
-                random_annotations = annotation_bucket
+
+            random_annotations = annotation_bucket
             distance = [math.sqrt(pow(annotation.width, 2) + pow(
                 annotation.length, 2)) for annotation in random_annotations]
             radius = max(distance)

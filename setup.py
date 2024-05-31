@@ -9,7 +9,7 @@ def read(fname):
 
 setup(
     name="retailtree",
-    version="1.2",
+    version="1.3",
     long_description=read("README.md"),
     long_description_content_type='text/markdown',
     packages=find_packages(),
