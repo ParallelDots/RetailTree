@@ -2,10 +2,7 @@ name: Publish RetailTree Python package distribution to PyPI
 
 on:
   push:
-    paths:
-      - "setup.py"
-    branches:
-      - "main"
+
 
 jobs:
   build:
