@@ -1,6 +1,6 @@
 import math
 import statistics as stats
-from typing_extensions import Callable
+from typing import Callable
 
 from retailtree.structs.annotation_struct import Annotation
 
@@ -60,7 +60,7 @@ class VPTree:
 
     def get_all_in_range(self, query, max_distance):
         # type: (tuple[float, float], float) -> list[tuple[float, Annotation]]
-        neighbors = list()  # type: list[tuple[float, Annotation]]
+        neighbors = list() # type: list[tuple[float, Annotation]]
         nodes_to_visit = [(self, 0)]
 
         while len(nodes_to_visit) > 0:

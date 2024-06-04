@@ -1,7 +1,7 @@
 import math
 from random import sample
 import numpy as np
-from typing_extensions import Callable, Literal
+from typing import Callable
 
 from retailtree.structs.annotation_struct import Annotation
 from retailtree.logics.vp_tree import VPTree
@@ -186,7 +186,7 @@ class RetailTree:
         return result_lst
 
     def TBLR(self, id, radius=1, overlap=0.5):
-        # type:(int, int, float) -> (dict[str, int | bool] | Literal['SKU is absent in annotation bucket'])
+        # type:(int, int, float) -> (dict[str, int | bool] | str)
         """
         Computes top, bottom, left, and right connections for a given annotation within a specified radius.
 
@@ -198,8 +198,9 @@ class RetailTree:
         -   overlap (float, optional): The overlap percentage used to compute connections. Defaults to 0.5.
 
         Returns:
-        -   dict: A dictionary containing top, bottom, left, and right connections of the given annotation.
+        -   dict OR str: A dictionary containing top, bottom, left, and right connections of the given annotation.
                 Each connection is represented by the ID of the connected annotation, or False if no connection exists.
+                If the SKU is not present in the bucket, a string with value 'SKU is absent in annotation bucket' is returned.
 
         Examples:
             Example usages of TBLR:
