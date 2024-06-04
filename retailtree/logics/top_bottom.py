@@ -1,8 +1,10 @@
+from retailtree.structs.annotation_struct import Annotation
 from retailtree.logics.overlap import calculate_overlap
 # Establishing tob-bottom connections
 
 
 def top_bottom_connections(i, j, given_overlap_percentage):
+    # type:(Annotation, Annotation, float) -> None
     if (i.y_max > j.y_max and i.y_min - i.width < j.y_max):
         # Finding overlap percentage
         overlap_percentage = calculate_overlap(i, j, axis='x')/j.length
@@ -24,6 +26,7 @@ def top_bottom_connections(i, j, given_overlap_percentage):
 
 # Establishing tob-bottom connections
 def bottom_top_connections(i, j, given_overlap_percentage):
+    # type:(Annotation, Annotation, float) -> None
     if j.top == None:
         if (i.y_max <= j.y_min and i.y_max + i.width > j.y_min):
             # Finding overlap percentage

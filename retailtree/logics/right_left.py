@@ -1,8 +1,10 @@
+from retailtree.structs.annotation_struct import Annotation
 from retailtree.logics.overlap import calculate_overlap
 
 
 # Establishing right-left connections
 def right_left_connections(i, j, given_overlap_percentage):
+    # type:(Annotation, Annotation, float) -> None
     # Checking the candidate annotations is in the range of base annotations corresponds to x axis
     if (i.x_min < j.x_min and i.x_max + i.length > j.x_min):
         # Finding overlap percentage
@@ -22,6 +24,7 @@ def right_left_connections(i, j, given_overlap_percentage):
 
 # Establishing left-right connection
 def left_right_connections(i, j, given_overlap_percentage):
+    # type:(Annotation, Annotation, float) -> None
     if j.right == None:
         # Checking the candidate annotations is in the range of base annotations corresponds to x axis
         if (i.x_min >= j.x_max and i.x_min - i.length < j.x_max):

@@ -1,5 +1,5 @@
 
-from typing import Optional, Dict, Any
+from typing import Any
 
 
 class Annotation:
@@ -25,7 +25,8 @@ class Annotation:
 
     """
 
-    def __init__(self, id: int, x_min: float,  y_min: float, x_max: float, y_max: float, label: Optional[Any] = None, metadata: Optional[Dict[Any, Any]] = None):
+    def __init__(self, id, x_min, y_min, x_max, y_max, label=None, metadata=None):
+        # type:(int, float, float, float, float, Any , dict[Any, Any]) -> None
         self.__id = int(id)
         self.__x_min = float(x_min)
         self.__x_max = float(x_max)
@@ -40,10 +41,10 @@ class Annotation:
         self.__width = None
 
         # TODO Check compatibility for older versions of python
-        self.right: "Annotation" = None
-        self.left: "Annotation" = None
-        self.top: "Annotation" = None
-        self.bottom: "Annotation" = None
+        self.right = None  # type: Annotation
+        self.left = None  # type: Annotation
+        self.top = None  # type: Annotation
+        self.bottom = None  # type: Annotation
 
         self.overlap_right = 0
         self.overlap_top = 0
@@ -128,9 +129,3 @@ class Annotation:
 
     def __repr__(self) -> str:
         return str(self.id)
-
-
-# ann = Annotation(10, 1, 1, 1, 1)
-
-
-# print(ann.y_mid)

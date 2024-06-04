@@ -1,16 +1,18 @@
+import math
+from random import sample
+import numpy as np
+from typing import Callable
+
 from retailtree.structs.annotation_struct import Annotation
 from retailtree.logics.vp_tree import VPTree
 from retailtree.logics.right_left import right_left_connections, left_right_connections
 from retailtree.logics.top_bottom import top_bottom_connections, bottom_top_connections
 from retailtree.utils.dist_func import euclidean
-import math
-from random import sample
-import numpy as np
 
 
 class RetailTree:
     def __init__(self) -> None:
-        self.annotations: dict[int, Annotation] = {}
+        self.annotations = {}  # type:dict[int, Annotation]
         self.tree = None
         self.__neighbors_radius = None
 
@@ -25,7 +27,8 @@ class RetailTree:
         """
         self.annotations[annotation.id] = annotation
 
-    def get(self, id: int):
+    def get(self, id):
+        # type:(int) -> Annotation
         """
         Retrieve an annotation by its ID.
 
@@ -38,6 +41,7 @@ class RetailTree:
         return self.annotations[id]
 
     def build_tree(self, dist_func=euclidean):
+        # type:(Callable[[tuple[float, float], tuple[float, float]], float]) -> None
         """
         Builds a Vantage Point Tree (VPTree) using the given distance function.
 
@@ -55,6 +59,7 @@ class RetailTree:
         self.tree = obj
 
     def __get_neighbors_radius(self):
+        # type:() -> float
         """
         Method to get the radius within which neighbors will be searched for.
         Radius is the max of the diagonals of the annotations considered.
@@ -70,14 +75,15 @@ class RetailTree:
             self.__neighbors_radius = radius
         return radius
 
-    def __fetch_neighbors(self, id: int, radius=1):
-
+    def __fetch_neighbors(self, id, radius=1):
+        # type:(int, int) -> list[tuple[float, Annotation]]
         radius = radius*self.__get_neighbors_radius()
         neighbors = self.tree.get_all_in_range(
             (self.annotations[id].x_mid, self.annotations[id].y_mid), radius)
         return neighbors
 
     def __finding_angle(self, origin, neighbor):
+        # type:(Annotation, tuple[float, Annotation]) -> int
         translated_point2 = np.array(
             [neighbor[1].x_mid, neighbor[1].y_mid]) - np.array([origin.x_mid, origin.y_mid])
         # print(translated_point2)
@@ -106,7 +112,8 @@ class RetailTree:
         # if min_angle is None:
         return result_lst
 
-    def neighbors_wa(self, id: int, radius=1, amin=None, amax=None):
+    def neighbors_wa(self, id, radius=1, amin=None, amax=None):
+        # type:(int, int, float, float) -> list[dict]
         """
         Retrieves neighboring elements within a specified angle range around a given element.
 
@@ -139,7 +146,8 @@ class RetailTree:
 
         return result_lst
 
-    def neighbors(self, id: int, radius=1):
+    def neighbors(self, id, radius=1):
+        # type:(int, int) -> list[dict]
         """
         Finds neighboring annotations within a specified radius of a given annotation.(Radius specified is taken as a square rather than a circle)
 
@@ -177,7 +185,8 @@ class RetailTree:
 
         return result_lst
 
-    def TBLR(self, id: int, radius=1, overlap=0.5):
+    def TBLR(self, id, radius=1, overlap=0.5):
+        # type:(int, int, float) -> (dict[str, int | bool] | str)
         """
         Computes top, bottom, left, and right connections for a given annotation within a specified radius.
 
@@ -189,8 +198,9 @@ class RetailTree:
         -   overlap (float, optional): The overlap percentage used to compute connections. Defaults to 0.5.
 
         Returns:
-        -   dict: A dictionary containing top, bottom, left, and right connections of the given annotation.
+        -   dict OR str: A dictionary containing top, bottom, left, and right connections of the given annotation.
                 Each connection is represented by the ID of the connected annotation, or False if no connection exists.
+                If the SKU is not present in the bucket, a string with value 'SKU is absent in annotation bucket' is returned.
 
         Examples:
             Example usages of TBLR:
