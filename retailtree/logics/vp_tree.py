@@ -1,10 +1,13 @@
-from typing import Callable
 import math
 import statistics as stats
+from typing_extensions import Callable
+
+from retailtree.structs.annotation_struct import Annotation
 
 
 class VPTree:
-    def __init__(self, points, dist_fn: Callable[[tuple[float, float], tuple[float, float]], float]):
+    def __init__(self, points, dist_fn):
+        # type:(list[Annotation], Callable[[tuple[float, float], tuple[float, float]], float]) -> None
         self.left = None
         self.right = None
         self.left_min = math.inf
@@ -56,7 +59,8 @@ class VPTree:
         return (self.left is None) and (self.right is None)
 
     def get_all_in_range(self, query, max_distance):
-        neighbors = list()
+        # type: (tuple[float, float], float) -> list[tuple[float, Annotation]]
+        neighbors = list()  # type: list[tuple[float, Annotation]]
         nodes_to_visit = [(self, 0)]
 
         while len(nodes_to_visit) > 0:

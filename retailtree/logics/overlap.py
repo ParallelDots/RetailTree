@@ -1,4 +1,8 @@
+from retailtree.structs.annotation_struct import Annotation
+
+
 def calculate_overlap(anno_1, anno_2, axis):
+    # type:(Annotation, Annotation, str) -> float
     """
     Calculate overlap of two annotations in given axis.
     Parameters
