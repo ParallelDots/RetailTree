@@ -105,10 +105,13 @@ class RetailTree:
         elif max_angle is None and min_angle < result_dict['angle']:
             result_lst.append(result_dict)
         elif min_angle is not None and max_angle is not None:
-            if min_angle <= result_dict['angle'] <= max_angle:
-                result_lst.append(result_dict)
-        else:
-            pass
+            if min_angle <= max_angle:
+                if min_angle <= result_dict['angle'] <= max_angle:
+                    result_lst.append(result_dict)
+            else:
+                if min_angle <= result_dict['angle'] or max_angle >= result_dict['angle']:
+                    result_lst.append(result_dict)
+
         # if min_angle is None:
         return result_lst
 
