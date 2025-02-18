@@ -28,12 +28,12 @@ class RetailTree:
         self.annotations[annotation.id] = annotation
 
     def get(self, id):
-        # type:(int) -> Annotation
+        # type:(int|str) -> Annotation
         """
         Retrieve an annotation by its ID.
 
         Args:
-            id (int): The ID of the annotation to retrieve.
+            id (int|str): The ID of the annotation to retrieve.
 
         Returns:
             The annotation corresponding to the provided ID.
@@ -76,7 +76,7 @@ class RetailTree:
         return radius
 
     def __fetch_neighbors(self, id, radius=1):
-        # type:(int, int) -> list[tuple[float, Annotation]]
+        # type:(int|str, int) -> list[tuple[float, Annotation]]
         radius = radius*self.__get_neighbors_radius()
         neighbors = self.tree.get_all_in_range(
             (self.annotations[id].x_mid, self.annotations[id].y_mid), radius)
@@ -116,12 +116,12 @@ class RetailTree:
         return result_lst
 
     def neighbors_wa(self, id, radius=1, amin=None, amax=None):
-        # type:(int, int, float, float) -> list[dict]
+        # type:(int|str, int, float, float) -> list[dict]
         """
         Retrieves neighboring elements within a specified angle range around a given element.
 
         Args:
-            id (int): The identifier of the central element.
+            id (int|str): The identifier of the central element.
             radius (float, optional): The radius within which to search for neighbors. Defaults to 1.
             amin (min_angle) (float, optional): The minimum angle in degree. Defaults to None.
             amax (max_angle) (float, optional): The maximum angle in degree. Defaults to None.
@@ -150,14 +150,14 @@ class RetailTree:
         return result_lst
 
     def neighbors(self, id, radius=1):
-        # type:(int, int) -> list[dict]
+        # type:(int|str, int) -> list[dict]
         """
         Finds neighboring annotations within a specified radius of a given annotation.(Radius specified is taken as a square rather than a circle)
 
         Uses a Vantage Point Tree (VPTree) to efficiently find annotations within the specified radius.
 
         Args:
-            id (int): The ID of the annotation.
+            id (int|str): The ID of the annotation.
             radius (float, optional): The relative radius within which to search. Defaults to 1.
                 If a value less than 1 is provided, it's multiplied by an internal factor.
 
@@ -189,14 +189,14 @@ class RetailTree:
         return result_lst
 
     def TBLR(self, id, radius=1, overlap=0.5):
-        # type:(int, int, float) -> (dict[str, int | bool] | str)
+        # type:(int|str, int, float) -> (dict[str, int | bool] | str)
         """
         Computes top, bottom, left, and right connections for a given annotation within a specified radius.
 
         Finds neighboring annotations within the radius, calculates connections based on overlap percentage, and returns the connections as a dictionary.
 
         Args:
-        -   id (int): The ID of the annotation.
+        -   id (int|str): The ID of the annotation.
         -   radius (float, optional): The radius within which to search for neighboring annotations. Defaults to 1.
         -   overlap (float, optional): The overlap percentage used to compute connections. Defaults to 0.5.
 

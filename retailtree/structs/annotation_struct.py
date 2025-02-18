@@ -9,7 +9,7 @@ class Annotation:
     Parameters
     ----------
     - id:
-        Int. Id of the Annotation.
+        Int|Str. Id of the Annotation.
     - x_min:
         Float. Left-most coordinate of rectangular annotation.
     - x_max:
@@ -26,8 +26,8 @@ class Annotation:
     """
 
     def __init__(self, id, x_min, y_min, x_max, y_max, label=None, metadata=None):
-        # type:(int, float, float, float, float, Any , dict[Any, Any]) -> None
-        self.__id = int(id)
+        # type:(int|str, float, float, float, float, Any , dict[Any, Any]) -> None
+        self.__id = id if isinstance(id, str) else int(id)
         self.__x_min = float(x_min)
         self.__x_max = float(x_max)
         self.__y_min = float(y_min)
